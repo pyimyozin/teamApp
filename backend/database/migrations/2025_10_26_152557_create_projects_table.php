@@ -9,19 +9,19 @@ return new class extends Migration {
 	 * Run the migrations.
 	 */
 	public function up(): void {
-		Schema::create( 'schedules', function ( Blueprint $table ) {
+		Schema::create( 'projects', function ( Blueprint $table ) {
 			$table->id();
-			$table->string( 'title', 100 );
+			$table->string( 'name', 255 );
 			$table->text( 'description' )->nullable();
-			$table->bigInteger( 'owned_by' )->unsigned();
-			$table->time( 'start_time' );
-			$table->time( 'end_time' );
-			$table->date( 'date' );
-			$table->tinyInteger( 'status' )->default( 0 )->comment( '0: pending, 1: completed, 2: incompleted' );
+			$table->bigInteger( 'owned_by' );
+			$table->bigInteger( 'lead_by' );
+			$table->tinyInteger( 'state' )->default( 0 )->comment( '0: pending, 1: developing, 2: break, 3: testing, 4: released, 5: updating' );
+			$table->dateTime( 'start_date' );
+			$table->dateTime( 'end_date' );
+			$table->bigInteger( 'created_by' )->nullable();
 			$table->dateTime( 'created_at' )->nullable()->useCurrent();
+			$table->bigInteger( 'updated_by' )->nullable();
 			$table->dateTime( 'updated_at' )->nullable()->useCurrentOnUpdate();
-			$table->softDeletes();
-			$table->foreign( 'owned_by' )->references( 'id' )->on( 'users' )->cascadeOnDelete();
 		} );
 	}
 
@@ -29,6 +29,6 @@ return new class extends Migration {
 	 * Reverse the migrations.
 	 */
 	public function down(): void {
-		Schema::dropIfExists( 'schedules' );
+		Schema::dropIfExists( 'projects' );
 	}
 };
