@@ -1,16 +1,15 @@
 import ReactDOM from 'react-dom/client';
-import Router from './router';
-import { HelmetProvider } from "react-helmet-async";
-import { BrowserRouter } from "react-router";
-import reportWebVitals from './utils/reportWebVitals';
+import { router } from './router';
+import { RouterProvider } from "react-router";
+import reportWebVitals from './reportWebVitals';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.min.css";
+import "./assets/css/common.css";
+import "bootstrap/dist/js/bootstrap.min.js";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <HelmetProvider>
-        <BrowserRouter>
-            <Router />
-        </BrowserRouter>
-    </HelmetProvider>
+    <RouterProvider router={router} />
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,0 +1,123 @@
+#dashboard {
+  width: 100%;
+  height: max-content;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Project list start */
+#dashboard #project_list {
+  height: 357px;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+#dashboard #project_list .card:first-of-type {
+  width: 100%;
+  height: 100%;
+}
+
+#dashboard #project_list .card:first-of-type .card-header i {
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#dashboard #project_list .card:first-of-type .noti .badge {
+  font-size: x-small;
+}
+
+#dashboard #project_list .card:first-of-type .card-body {
+  padding: 0;
+}
+
+#dashboard #project_list .card:first-of-type .last-message {
+  height: 111px;
+  overflow: hidden;
+}
+
+#dashboard #project_list .card:first-of-type .alert {
+  height: max-content;
+  font-size: small;
+  max-height: 100%;
+  margin: auto 0 0;
+}
+
+#dashboard #project_list .project-list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  gap: 10px;
+}
+
+#dashboard #project_list .project-list .card {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+#dashboard #project_list .project-list .card > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#dashboard #project_list .project-list .state {
+  width: max-content;
+}
+
+#dashboard #project_list .project-list .active-time {
+  font-size: 12px;
+}
+/* Project list end */
+
+/* News Slider start */
+#dashboard #news_slider {
+  width: 50%;
+  height: 357px;
+  padding: 10px;
+}
+
+#dashboard #news_slider .carousel-control-next,
+#dashboard #news_slider .carousel-control-prev {
+}
+
+#dashboard #news_slider-carousel,
+#dashboard #news_slider-carousel .carousel-inner,
+#dashboard #news_slider-carousel .carousel-item,
+#dashboard #news_slider-carousel .card {
+  height: 100%;
+}
+/* News Slider end */
+
+/* Task List start */
+#dashboard #task_list {
+  min-height: 320px;
+  padding: 10px;
+}
+
+#dashboard #task_list .end_date {
+  width: 90px;
+}
+/* Task List end */
+
+/* Working Status start */
+#dashboard #working_status {
+  padding: 10px;
+}
+
+#dashboard #working_status .status-block {
+  padding: 0;
+  font-size: small;
+}
+
+#dashboard #working_status .status-block:first-child {
+  padding-bottom: 10px;
+}
+
+#dashboard #working_status .status-block:last-child {
+  padding-left: 10px;
+}
+/* Working Status end */
