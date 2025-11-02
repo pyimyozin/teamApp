@@ -1,0 +1,17 @@
+body {
+  overflow-x: hidden;
+}
+
+#root {
+  display: flex;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
