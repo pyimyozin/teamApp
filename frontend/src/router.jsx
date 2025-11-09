@@ -1,17 +1,25 @@
-import { Routes, Route } from "react-router";
-import MainLayout from "./views/layouts/MainLayout";
-import Home from "./views/home/Home";
-import Error from "./views/error/Error";
+import { createBrowserRouter } from "react-router";
+import axios from "axios";
+import Dashboard from "./views/dashboard/Dashboard";
+import Login from "./views/auth/Login";
 
-// register the routes
-export default function Router() {
-  return (
-    <Routes>
-      <Route element={<MainLayout />}>
-        <Route path="/" element={<Home />} />
-      </Route>
-      
-      <Route path="*" element={<Error />} />
-    </Routes>
-  );
-}
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Dashboard />,
+    name: "home"
+  },
+  {
+    path: "/login",
+    element: <Login />,
+    name: "login"
+  }
+]);
+
+export const route = name => router.routes.find(route => route.name === name);
+
+export const api = axios.create({
+  // baseURL: "localhost:8000/api/v1/"
+  baseURL: "http://192.168.100.90:8000/api/v1/",
+  withCredentials: true
+});
