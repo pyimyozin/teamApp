@@ -1,7 +1,7 @@
 import "../../assets/css/aside.css";
 import { Link } from "react-router";
 import defaultProfile from "../../assets/image/default_profile.jpg";
-import { _route } from "../../router";
+import { route } from "../../router";
 
 export default function Aside() {
   const List = {
@@ -48,9 +48,9 @@ export default function Aside() {
 
         <nav>
           <ul>
-            {Object.entries(List).map(([title, route], index) => (
+            {Object.entries(List).map(([title, routeName], index) => (
               <li key={index}>
-                <Link to={ route ? _route(route) : "/" }>{title}</Link>
+                <Link to={route ? route(routeName) : "/"}>{title}</Link>
               </li>
             ))}
           </ul>
